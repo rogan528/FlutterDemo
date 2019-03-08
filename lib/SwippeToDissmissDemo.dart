@@ -24,12 +24,12 @@ class _SwippeToDissmissState extends State<SwippeToDissmissDemo> {
               background: Container(
                 color: Colors.redAccent,
               ),
-              onDismissed: (dicection){
+              /*onDismissed: (dicection){
                 setState(() {
                   Scaffold.of(context).showSnackBar(SnackBar(content: Text("${list[index]}")));
                   list.removeAt(index);
                 });
-              }
+              }*/
             );
       }),
     );
