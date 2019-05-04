@@ -5,6 +5,7 @@ import 'package:flutter_app/SwippeToDissmissDemo.dart';
 void main() => runApp(
     MaterialApp(
       title: 'simple login',
+      debugShowCheckedModeBanner: false,
       home: AppPage(),
     ));
 
@@ -26,8 +27,10 @@ class AppPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
-        title: Text('Simple login'),
+        title: Text('登录'),
+        centerTitle: true,
       ),
       body: Container(
         margin: EdgeInsets.all(16.0),

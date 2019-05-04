@@ -6,6 +6,7 @@ class SwippeToDissmissDemo extends StatefulWidget {
     return new _SwippeToDissmissState();
   }
 }
+
 class _SwippeToDissmissState extends State<SwippeToDissmissDemo> {
   List<String> list = List.generate(20, (index) => "列表展示 $index 元素");
   @override
@@ -14,26 +15,33 @@ class _SwippeToDissmissState extends State<SwippeToDissmissDemo> {
       appBar: AppBar(
         title: Text("张彬"),
       ),
-      body: ListView.builder(
-          itemCount: list.length, itemBuilder: (context, index) {
-            return Dismissible(
-              key: Key(list[index]),
-              direction: DismissDirection.endToStart,
-              child: ListTile(
-                  leading:Icon(Icons.favorite_border),
-                  title: Text('${list[index]}'),
-              trailing: Icon(Icons.arrow_forward_ios),),
-              background: Container(
-                color: Colors.redAccent,
-              ),
-              /*onDismissed: (dicection){
-                setState(() {
-                  Scaffold.of(context).showSnackBar(SnackBar(content: Text("${list[index]}")));
-                  list.removeAt(index);
-                });
-              }*/
-            );
-      }),
+      body: buildListView(),
     );
+  }
+
+  ListView buildListView() {
+    return ListView.builder(
+        scrollDirection: Axis.vertical,
+        itemCount: list.length,
+        itemBuilder: (context, index) {
+          return Dismissible(
+            key: Key(list[index]),
+            direction: DismissDirection.endToStart,
+            child: ListTile(
+              leading: Icon(Icons.favorite_border),
+              title: Text('${list[index]}'),
+              trailing: Icon(Icons.arrow_forward_ios),
+            ),
+            background: Container(
+              color: Colors.redAccent,
+            ),
+            /*onDismissed: (dicection){
+              setState(() {
+                Scaffold.of(context).showSnackBar(SnackBar(content: Text("${list[index]}")));
+                list.removeAt(index);
+              });
+            }*/
+          );
+        });
   }
 }
