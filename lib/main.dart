@@ -87,6 +87,7 @@ class AppPage extends StatelessWidget {
                         onPressed: (){
                           _login(context);
                         },
+                        highlightColor:Colors.cyan,
                         child: Text(
                           '登陆',
                           style: TextStyle(color: Colors.black, fontSize: 20.0),
