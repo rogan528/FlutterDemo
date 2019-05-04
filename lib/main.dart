@@ -12,10 +12,12 @@ class AppPage extends StatelessWidget {
   GlobalKey<FormState> _loginKey = GlobalKey();
   String _username;
   String _password;
-  void _login(){
+  void _login(BuildContext context){
     var loginForm = _loginKey.currentState;
     if(loginForm.validate()){
       loginForm.save();
+      Navigator.push(context,
+          new MaterialPageRoute(builder: (context) => new SwippeToDissmissDemo()));
       print('username is =$_username && password is =$_password');
     }
 
@@ -80,9 +82,7 @@ class AppPage extends StatelessWidget {
                       width: 450.0,
                       child: RaisedButton(
                         onPressed: (){
-                          _login();
-                          Navigator.push(context,
-                              new MaterialPageRoute(builder: (context) => new SwippeToDissmissDemo()));
+                          _login(context);
                         },
                         child: Text(
                           '登陆',

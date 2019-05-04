@@ -6,7 +6,6 @@ class SwippeToDissmissDemo extends StatefulWidget {
     return new _SwippeToDissmissState();
   }
 }
-
 class _SwippeToDissmissState extends State<SwippeToDissmissDemo> {
   List<String> list = List.generate(20, (index) => "列表展示 $index 元素");
   @override
@@ -20,7 +19,10 @@ class _SwippeToDissmissState extends State<SwippeToDissmissDemo> {
             return Dismissible(
               key: Key(list[index]),
               direction: DismissDirection.endToStart,
-              child: ListTile(title: Text('${list[index]}'),),
+              child: ListTile(
+                  leading:Icon(Icons.favorite_border),
+                  title: Text('${list[index]}'),
+              trailing: Icon(Icons.arrow_forward_ios),),
               background: Container(
                 color: Colors.redAccent,
               ),
