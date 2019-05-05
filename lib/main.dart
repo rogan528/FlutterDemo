@@ -35,8 +35,11 @@ class AppPage extends StatelessWidget {
         title: Text('登录'),
         centerTitle: true,
       ),
-      body: Container(
-        margin: EdgeInsets.all(16.0),
+      body:new SingleChildScrollView(
+        child: new ConstrainedBox(
+        constraints: new BoxConstraints(
+        minHeight: 120.0,
+        ),
         child: Center(
           child: Form(
             key: _loginKey,
@@ -104,6 +107,7 @@ class AppPage extends StatelessWidget {
             ),
           ),
         ),
+      ),
       ),
     );
   }
