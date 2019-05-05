@@ -1,6 +1,7 @@
 //<editor-fold desc="Description">
 import 'package:flutter/material.dart';
 import 'package:flutter_app/SwippeToDissmissDemo.dart';
+import 'package:flutter_app/framework.dart';
 
 void main() => runApp(
     MaterialApp(
@@ -17,8 +18,10 @@ class AppPage extends StatelessWidget {
     var loginForm = _loginKey.currentState;
     if(loginForm.validate()){
       loginForm.save();
+      /*Navigator.push(context,
+          new MaterialPageRoute(builder: (context) => new SwippeToDissmissDemo()));*/
       Navigator.push(context,
-          new MaterialPageRoute(builder: (context) => new SwippeToDissmissDemo()));
+          new MaterialPageRoute(builder: (context) => new framework()));
       print('username is =$_username && password is =$_password');
     }
 
@@ -61,6 +64,7 @@ class AppPage extends StatelessWidget {
                     height: 10.0,
                   ),
                   TextFormField(
+                    //keyboardAppearance:Brightness.dark,
                     decoration: InputDecoration(
                       contentPadding:
                           const EdgeInsets.symmetric(vertical: 10.0),
