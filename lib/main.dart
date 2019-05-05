@@ -61,6 +61,7 @@ class AppPage extends StatelessWidget {
                     height: 10.0,
                   ),
                   TextFormField(
+                    //keyboardAppearance:Brightness.dark,
                     decoration: InputDecoration(
                       contentPadding:
                           const EdgeInsets.symmetric(vertical: 10.0),
