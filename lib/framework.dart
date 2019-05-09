@@ -90,9 +90,6 @@ class _HomePageState extends State<HomePage> {
               ),
               accountName: Text('张彬'),
               accountEmail: Text('3097940262@qq.com'),
-              otherAccountsPictures: <Widget>[
-                Icon(Icons.camera_alt),
-              ],
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/images/tzd.jpg'),
@@ -100,6 +97,17 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+            ListTile(
+              leading: Icon(Icons.payment),
+              title: Text('会员支付'),
+            ),
+            AboutListTile(
+              icon: Icon(Icons.payment),
+              child: Text('关于'),
+              applicationName: '开发者:张彬开发',
+              applicationVersion: '版本号:1.0.0',
+            ),
+
           ],
         ),
       ),
