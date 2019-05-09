@@ -34,6 +34,11 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('首页'),
         centerTitle: true,
+        elevation: 0.0,
+        leading: Icon(Icons.arrow_back),
+        actions: <Widget>[
+          Icon(Icons.more_vert),
+        ],
       ),
       body: _widgetOptions.elementAt(_currentIndex),
       floatingActionButton: FloatingActionButton(onPressed: () {
