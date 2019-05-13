@@ -100,6 +100,9 @@ class _HomePageState extends State<HomePage> {
             ListTile(
               leading: Icon(Icons.payment),
               title: Text('会员支付'),
+              onTap: (){
+                print('click');
+              },
             ),
             AboutListTile(
               icon: Icon(Icons.payment),
