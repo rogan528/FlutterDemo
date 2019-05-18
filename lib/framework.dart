@@ -102,6 +102,35 @@ class _HomePageState extends State<HomePage> {
               title: Text('会员支付'),
               onTap: (){
                 print('click');
+                showDialog(
+                    context: context,
+                   builder: (BuildContext context){
+                      return AlertDialog(
+                        title: Text('会员支付'),
+                        content: SingleChildScrollView(
+                          child: ListBody(
+                            children: <Widget>[
+                              Text('是否进行支付？'),
+                            ],
+                          ),
+                        ),
+                        actions: <Widget>[
+                          FlatButton(
+                            child: Text('确定'),
+                            onPressed: (){
+
+                            },
+                          ),
+                          FlatButton(
+                            child: Text('取消'),
+                            onPressed: (){
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                        ],
+                      );
+                   }
+                );
               },
             ),
             AboutListTile(
