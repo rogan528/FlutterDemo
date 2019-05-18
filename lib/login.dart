@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/mainpage.dart';
 
-void login() => runApp(
+void main() => runApp(
     MaterialApp(
       title: 'simple login',
       debugShowCheckedModeBanner: false,

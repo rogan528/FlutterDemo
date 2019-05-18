@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/listvieweshow.dart';
+import 'package:flutter/cupertino.dart';
 
 void main() => runApp(mainpage());
 
@@ -106,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                 showDialog(
                     context: context,
                    builder: (BuildContext context){
-                      return AlertDialog(
+                      return CupertinoAlertDialog(
                         title: Text('会员支付'),
                         content: SingleChildScrollView(
                           child: ListBody(
