@@ -17,8 +17,6 @@ class AppPage extends StatelessWidget {
     var loginForm = _loginKey.currentState;
     if(loginForm.validate()){
       loginForm.save();
-      /*Navigator.push(context,
-          new MaterialPageRoute(builder: (context) => new SwippeToDissmissDemo()));*/
       Navigator.push(context,
           new MaterialPageRoute(builder: (context) => new mainpage()));
       print('username is =$_username && password is =$_password');

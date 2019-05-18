@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/listvieweshow.dart';
 import 'package:flutter/cupertino.dart';
 
 void main() => runApp(mainpage());
@@ -10,7 +9,6 @@ class mainpage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: '首页',
       routes: {'/other': (BuildContext context) => OtherPage()},
       home: HomePage(),
     );
@@ -25,23 +23,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   final _widgetOptions = [
-    Text('信息'),
-    Text('通讯录'),
-    Text('发现'),
-    Text('我'),
+    Message(),
+    Contact(),
+    Find(),
+    My(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('首页'),
-        centerTitle: true,
-        elevation: 0.0,
-        leading: Icon(Icons.arrow_back),
-        actions: <Widget>[
-          Icon(Icons.more_vert),
-        ],
-      ),
       body: _widgetOptions.elementAt(_currentIndex),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -88,7 +77,8 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                backgroundImage: NetworkImage('https://randomuser.me/api/portraits/women/17.jpg'),
+                backgroundImage: NetworkImage(
+                    'https://randomuser.me/api/portraits/women/17.jpg'),
               ),
               accountName: Text('张彬'),
               accountEmail: Text('3097940262@qq.com'),
@@ -102,14 +92,13 @@ class _HomePageState extends State<HomePage> {
             ListTile(
               leading: Icon(Icons.payment),
               title: Text('会员支付'),
-              onTap: (){
+              onTap: () {
                 print('click');
                 showDialog(
                     context: context,
-                   builder: (BuildContext context){
+                    builder: (BuildContext context) {
                       return alipayDialog(context);
-                   }
-                );
+                    });
               },
             ),
             AboutListTile(
@@ -118,7 +107,6 @@ class _HomePageState extends State<HomePage> {
               applicationName: '开发者:张彬',
               applicationVersion: '版本号:1.0.0',
             ),
-
           ],
         ),
       ),
@@ -138,18 +126,108 @@ class _HomePageState extends State<HomePage> {
       actions: <Widget>[
         FlatButton(
           child: Text('确定'),
-          onPressed: (){
-            Navigator.push(context,
-                new MaterialPageRoute(builder: (context) => new listvieweshow()));
+          onPressed: () {
+            Navigator.push(
+                context,
+                new MaterialPageRoute(
+                    builder: (context) => new Message()));
           },
         ),
         FlatButton(
           child: Text('取消'),
-          onPressed: (){
+          onPressed: () {
             Navigator.of(context).pop();
           },
         ),
       ],
+    );
+  }
+}
+
+class Message extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    List<String> list = List.generate(20, (index) => "列表展示 $index 元素");
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          '信息',
+        ),
+        centerTitle: true,
+      ),
+    );
+  }
+}
+class Contact extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          '通讯录',
+        ),
+        centerTitle: true,
+      ),
+      body: new ListViewState(),
+    );
+  }
+}
+class ListViewState extends StatefulWidget {
+  @override
+  _ListViewState createState() => _ListViewState();
+}
+
+class _ListViewState extends State<ListViewState> {
+  List<String> list = List.generate(20, (index) => "列表展示 $index 元素");
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+        itemCount: list.length,
+        itemBuilder: (context, index) {
+          return Dismissible(
+              key: Key(list[index]),
+              direction: DismissDirection.endToStart,
+              child: ListTile(
+                title: Text('${list[index]}'),
+              ),
+              background: Container(
+                color: Colors.redAccent,
+              ),
+              onDismissed: (dicection) {
+                setState(() {
+                  Scaffold.of(context)
+                      .showSnackBar(SnackBar(content: Text("${list[index]}")));
+                  list.removeAt(index);
+                });
+              });
+        });
+  }
+}
+class Find extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          '发现',
+        ),
+        centerTitle: true,
+      ),
+    );
+  }
+}
+
+class My extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          '我',
+        ),
+        centerTitle: true,
+      ),
     );
   }
 }
