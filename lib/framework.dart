@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/listvieweshow.dart';
 
 void main() => runApp(framework());
 
@@ -118,7 +119,8 @@ class _HomePageState extends State<HomePage> {
                           FlatButton(
                             child: Text('确定'),
                             onPressed: (){
-
+                              Navigator.push(context,
+                                  new MaterialPageRoute(builder: (context) => new listvieweshow()));
                             },
                           ),
                           FlatButton(

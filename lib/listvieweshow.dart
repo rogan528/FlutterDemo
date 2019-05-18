@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/framework.dart';
 
-class SwippeToDissmissDemo extends StatefulWidget {
+class listvieweshow extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return new _SwippeToDissmissState();
   }
 }
 
-class _SwippeToDissmissState extends State<SwippeToDissmissDemo> {
+class _SwippeToDissmissState extends State<listvieweshow> {
   List<String> list = List.generate(20, (index) => "列表展示 $index 元素");
   @override
   Widget build(BuildContext context) {
