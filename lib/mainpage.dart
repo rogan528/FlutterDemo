@@ -107,31 +107,7 @@ class _HomePageState extends State<HomePage> {
                 showDialog(
                     context: context,
                    builder: (BuildContext context){
-                      return CupertinoAlertDialog(
-                        title: Text('会员支付'),
-                        content: SingleChildScrollView(
-                          child: ListBody(
-                            children: <Widget>[
-                              Text('是否进行支付？'),
-                            ],
-                          ),
-                        ),
-                        actions: <Widget>[
-                          FlatButton(
-                            child: Text('确定'),
-                            onPressed: (){
-                              Navigator.push(context,
-                                  new MaterialPageRoute(builder: (context) => new listvieweshow()));
-                            },
-                          ),
-                          FlatButton(
-                            child: Text('取消'),
-                            onPressed: (){
-                              Navigator.of(context).pop();
-                            },
-                          ),
-                        ],
-                      );
+                      return alipayDialog(context);
                    }
                 );
               },
@@ -146,6 +122,34 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+    );
+  }
+
+  Widget alipayDialog(BuildContext context) {
+    return AlertDialog(
+      title: Text('会员支付'),
+      content: SingleChildScrollView(
+        child: ListBody(
+          children: <Widget>[
+            Text('是否进行支付？'),
+          ],
+        ),
+      ),
+      actions: <Widget>[
+        FlatButton(
+          child: Text('确定'),
+          onPressed: (){
+            Navigator.push(context,
+                new MaterialPageRoute(builder: (context) => new listvieweshow()));
+          },
+        ),
+        FlatButton(
+          child: Text('取消'),
+          onPressed: (){
+            Navigator.of(context).pop();
+          },
+        ),
+      ],
     );
   }
 }
