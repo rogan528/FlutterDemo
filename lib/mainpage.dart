@@ -152,6 +152,11 @@ class Message extends StatelessWidget {
           '信息',
         ),
         centerTitle: true,
+        elevation: 0.0,
+        leading: Icon(Icons.arrow_back),
+        actions: <Widget>[
+          Icon(Icons.more_vert),
+        ],
       ),
     );
   }
@@ -166,6 +171,11 @@ class Contact extends StatelessWidget {
           '通讯录',
         ),
         centerTitle: true,
+        elevation: 0.0,
+        leading: Icon(Icons.arrow_back),
+        actions: <Widget>[
+          Icon(Icons.add),
+        ],
       ),
       body: new ListViewState(),
     );
