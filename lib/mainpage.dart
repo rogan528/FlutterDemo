@@ -127,10 +127,8 @@ class _HomePageState extends State<HomePage> {
         FlatButton(
           child: Text('确定'),
           onPressed: () {
-            Navigator.push(
-                context,
-                new MaterialPageRoute(
-                    builder: (context) => new Message()));
+            Navigator.push(context,
+                new MaterialPageRoute(builder: (context) => new Message()));
           },
         ),
         FlatButton(
@@ -158,6 +156,7 @@ class Message extends StatelessWidget {
     );
   }
 }
+
 class Contact extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -172,6 +171,7 @@ class Contact extends StatelessWidget {
     );
   }
 }
+
 class ListViewState extends StatefulWidget {
   @override
   _ListViewState createState() => _ListViewState();
@@ -204,6 +204,7 @@ class _ListViewState extends State<ListViewState> {
         });
   }
 }
+
 class Find extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
