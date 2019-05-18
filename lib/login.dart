@@ -1,9 +1,8 @@
 //<editor-fold desc="Description">
 import 'package:flutter/material.dart';
-import 'package:flutter_app/listvieweshow.dart';
-import 'package:flutter_app/framework.dart';
+import 'package:flutter_app/mainpage.dart';
 
-void main() => runApp(
+void login() => runApp(
     MaterialApp(
       title: 'simple login',
       debugShowCheckedModeBanner: false,
@@ -21,7 +20,7 @@ class AppPage extends StatelessWidget {
       /*Navigator.push(context,
           new MaterialPageRoute(builder: (context) => new SwippeToDissmissDemo()));*/
       Navigator.push(context,
-          new MaterialPageRoute(builder: (context) => new framework()));
+          new MaterialPageRoute(builder: (context) => new mainpage()));
       print('username is =$_username && password is =$_password');
     }
 

@@ -2,9 +2,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/listvieweshow.dart';
 
-void main() => runApp(framework());
+void main() => runApp(mainpage());
 
-class framework extends StatelessWidget {
+class mainpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -136,9 +136,9 @@ class _HomePageState extends State<HomePage> {
               },
             ),
             AboutListTile(
-              icon: Icon(Icons.payment),
+              icon: Icon(Icons.favorite),
               child: Text('关于'),
-              applicationName: '开发者:张彬开发',
+              applicationName: '开发者:张彬',
               applicationVersion: '版本号:1.0.0',
             ),
 
