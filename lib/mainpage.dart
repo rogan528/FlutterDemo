@@ -77,8 +77,7 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    'https://randomuser.me/api/portraits/women/17.jpg'),
+                backgroundImage: AssetImage('assets/images/icon.jpg')
               ),
               accountName: Text('张彬'),
               accountEmail: Text('3097940262@qq.com'),
@@ -93,7 +92,6 @@ class _HomePageState extends State<HomePage> {
               leading: Icon(Icons.payment),
               title: Text('会员支付'),
               onTap: () {
-                print('click');
                 showDialog(
                     context: context,
                     builder: (BuildContext context) {
@@ -158,6 +156,7 @@ class Message extends StatelessWidget {
           Icon(Icons.more_vert),
         ],
       ),
+      body: new ListViewState(),
     );
   }
 }
