@@ -1,13 +1,16 @@
 # flutter_app
 
 A new Flutter application.
-FlutterDemo页面
-## 登录页面
-![登录页面](https://github.com/rogan528/TuPianResource/blob/master/flutter_login.png)
-## 登录成功跳转到下一页
-![导航栏](https://github.com/rogan528/TuPianResource/blob/master/%E5%BA%95%E9%83%A8%E5%AF%BC%E8%88%AA%E6%A0%8F.png)
-## 侧边栏会员支付
-![支付](https://github.com/rogan528/TuPianResource/blob/master/alipay.png)
 
 ## Getting Started
 
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
